@@ -99,3 +99,8 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# Kaggle data
+test.csv
+train.csv
+sample_submission.csv
