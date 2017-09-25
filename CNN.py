@@ -4,8 +4,8 @@ import tensorflow as tf # tensor flow
 from keras.utils.np_utils import to_categorical # one hot encoding
 
 # configuration parameter
-TRAINING_ITERATIONS = 1000
-BATCH_SIZE = 128
+TRAINING_ITERATIONS = 5000
+BATCH_SIZE = 64
 LEARNING_RATE = 1e-4
 
 def get_accuracy(v_xs, v_ys):
