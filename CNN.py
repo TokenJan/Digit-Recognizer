@@ -4,7 +4,7 @@ import tensorflow as tf # tensor flow
 from keras.utils.np_utils import to_categorical # one hot encoding
 
 # configuration parameter
-TRAINING_ITERATIONS = 5000
+TRAINING_ITERATIONS = 20000
 BATCH_SIZE = 64
 LEARNING_RATE = 1e-4
 
@@ -114,8 +114,8 @@ sess.run(init)
 for i in range(TRAINING_ITERATIONS):
     batch_xs, batch_ys = next_batch(BATCH_SIZE)
     sess.run(train_step, feed_dict={xs: batch_xs, ys: batch_ys, keep_prob: 0.5})
-    if i % 50 == 0:
-        print(get_accuracy(batch_xs, batch_ys))
+    if i % 100 == 0:
+        print(i, get_accuracy(batch_xs, batch_ys))
 
 # read testing data from CSV file
 x_test = pd.read_csv("./data/test.csv").values.astype('float32')
